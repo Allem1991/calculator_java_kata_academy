@@ -15,7 +15,7 @@ public class Main {
 
     public static String calc(String input) {
 
-        String[] parts = input.trim().split(" ");
+        String[] parts = input.trim().split("\\s+");
 
         //проверка, является ли входная строка математической формулой
         if (parts.length < 3) {
@@ -43,7 +43,7 @@ public class Main {
             leftOperand = RomanNumeral.valueOf(leftOperandStr).getArabicValue();
             rightOperand = RomanNumeral.valueOf(rightOperandStr).getArabicValue();
             if (!allowedValue(leftOperand, rightOperand))  {
-                throw new NumberFormatException("Допустимые значения чисел от 1 до 10");
+                throw new NumberFormatException("Допустимые значения римских чисел от I до X");
             }
             isRomanNumerals = true;
         } else {
